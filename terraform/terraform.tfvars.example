@@ -1,0 +1,27 @@
+# Example configuration for Terraform variables
+# Copy this file to terraform.tfvars and modify as needed
+
+aws_region = "us-west-2"
+project_name = "gitops-demo"
+environment = "dev"
+
+vpc_cidr = "10.0.0.0/16"
+public_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+private_subnet_cidrs = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+
+kubernetes_version = "1.27"
+
+worker_node_instance_types = ["t3.medium"]
+worker_node_min_size = 2
+worker_node_max_size = 5
+worker_node_desired_size = 2
+
+# Uncomment and set this to use an existing EC2 key pair for SSH access
+# ec2_ssh_key_name = "my-key-pair"
+
+# CIDR blocks allowed to SSH to the bastion host
+allowed_ssh_cidr_blocks = ["0.0.0.0/0"]  # Restrict this in production
+
+# Admin ARNs for EKS access
+# admin_arns = ["arn:aws:iam::123456789012:user/admin1", "arn:aws:iam::123456789012:role/admin-role"]

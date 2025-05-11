@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "sample-microservice.fullname" . }}
+  labels:
+    {{- include "sample-microservice.labels" . | nindent 4 }}
+data:
+  # Add configuration files or environment variables here
+  app-config.json: |-
+    {
+      "environment": "{{ .Values.config.env.NODE_ENV }}",
+      "port": {{ .Values.config.env.PORT }}
+    }

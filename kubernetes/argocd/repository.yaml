@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: repo-sample-microservice
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: https://github.com/Sushant24-ai/gitops-sush.git  # Replace with your repository URL
+  password: ""  # Only required for private repositories
+  username: ""  # Only required for private repositories
